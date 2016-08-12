@@ -10,8 +10,7 @@
 1.  *WHEN YOU ARE READY TO PUSH* do so with `git push --set-upstream origin training/one-to-many`
 1.  Install dependencies with `bundle install`.
 1.  Add secrets to `config/secrets.yml`.
-1.  Create a database with `bundle exec rake db:create`.
-1.  Create a database schema with `bundle exec rake db:migrate`.
+1.  Setup a clean a database with `bundle exec rake db:nuke_pave`.
 1.  Run the HTTP server with `bundle exec rails server`.
 
 ## [License](LICENSE)
