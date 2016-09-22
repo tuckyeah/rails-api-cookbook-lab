@@ -13,3 +13,13 @@ curl --include --request POST http://localhost:3000/ingredients \
       "toxicity": 80
     }
   }'
+
+# update
+
+curl --include --request PATCH http://localhost:3000/ingredients/1 \
+  --header "Content-Type: application/json" \
+  --data '{
+    "ingredient": {
+      "toxicity": 0
+    }
+  }'
