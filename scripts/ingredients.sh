@@ -23,3 +23,7 @@ curl --include --request PATCH http://localhost:3000/ingredients/1 \
       "toxicity": 0
     }
   }'
+
+# delete
+curl --include --request DELETE http://localhost:3000/ingredients/3 \
+  --header "Content-Type: application/json" \

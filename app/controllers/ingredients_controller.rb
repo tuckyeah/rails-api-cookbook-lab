@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-  before_action :set_ingredient, only: [:show, :update]
+  before_action :set_ingredient, only: [:show, :update, :destroy]
   def index
     @ingredients = Ingredient.all
     render json: @ingredients
@@ -20,6 +20,14 @@ class IngredientsController < ApplicationController
 
   def update
     if @ingredient.update(ingredient_params)
+      head :no_content
+    else
+      render json: @ingredient.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    if @ingredient.destroy
       head :no_content
     else
       render json: @ingredient.errors, status: :unprocessable_entity
